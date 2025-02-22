@@ -14,12 +14,20 @@ if order_status.lower() == "y":
         bill = 15
     elif size.lower() == "l":
         bill = 20
+    else:
+        print("Invalid size")
     add_pepperoni = input("Do you want pepperoni? Y or N: ")
     extra_cheese = input("Do you want extra cheese? Y or N: ")
     if add_pepperoni.lower() == "y":
-        bill += 1
+        if size.lower() == "s":
+            bill += 2
+        else:
+            bill += 3
     if extra_cheese.lower() == "y":
-        bill += 1
+        if size.lower() == "s":
+            bill += 2
+        else:
+            bill += 3
     print(f"Your final payment is {bill}")
 else:
     print("Thanks for stopping by")
